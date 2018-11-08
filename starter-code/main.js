@@ -4,16 +4,53 @@
 	Each of these animal objects should have a name, a noise that they make,
 	and a makeNoise property that prints out their noise.
 */
+	var dog = {
+		name : "Bill",
+		noise : "bark",
 
+	makeNoise: function(){
+	console.log(this.noise);
+	}
+	};
+
+	var cat = {
+		name : "Tim",
+		noise : "meow",
+	makeNoise: function(){
+		console.log(this.noise);
+	}
+	}
+
+	var bird = {
+		name : "Jack",
+		noise : "mooo",
+	makeNoise: function(){
+	console.log(this.noise);
+	}
+	}		
+
+	var mouse = {
+		name : "Jill",
+		noise : "ha ha ha",
+	makeNoise: function(){
+	console.log(this.noise);
+	}
+	}	
 /*
 	Part 2: Let's use an array to hold all of these animals.
 	Create a new variable, animals, that contains the 4 animals we just created.
 
 	Use a for-loop to iterate through the array of animals and have each animal make a noise.
 
-	Hint: Use the makeNoise() function for each animal in the array
-*/
+	Hint: Use the makeNoise() function for each animal in the arra */
+	var animals = [dog,cat,bird,mouse];
 
+		var noises = function() {
+			for (i = 0; i < animals.length; i++){
+				console.log(i);
+				console.log(animals[i].makeNoise());
+		}
+		}
 /*
 	Part 3: Let's see how hungry these animals get by adding a "hunger" property to them.
 	Use a for-loop to iterate through the array of animals and add a "hunger" property with
@@ -24,6 +61,11 @@
 	myObject.newPropertyName = newValue; // or...
 	myObject['newPropertyName'] = newValue;
 */
+		var hunger = function() {
+			for (i = 0; i < animals.length; i++){
+				animals[i].hunger = 10;
+			}
+		}
 
 /*
 	Part 4: These animals should be able to walk. Let's add a new "walk" property to them.
@@ -43,6 +85,15 @@
 
 	Hint: You will need the "this" keyword
 */
+var walkers = function(){
+	for (i = 0; i <animals.length; i++){
+	animals[i].walk = function() {
+	console.log(`${this.animals} took a walk`);
+	this.hunger = this.hunger - 1;
+	return;
+}
+}
+}
 
 /*
 	Part 5: Now these animals can walk and talk by themselves, but they're quite lonely.
@@ -65,7 +116,14 @@
 	duck.friend.makeNoise();
 	// => "chirp quack"
 */
-
+var friends = function(){
+	for (i = 0; i <animals.length; i++){
+	animals[i].makeFriend = function(friend) {
+	this.friend = friend;
+	return;
+}
+}
+}
 
 /* BONUS
 This bonus will be a challenge! To complete this step, you'll need to do some Googling to look up things that have not yet been covered.
