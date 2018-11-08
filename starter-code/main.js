@@ -66,7 +66,6 @@
 				animals[i].hunger = 10;
 			}
 		}
-
 /*
 	Part 4: These animals should be able to walk. Let's add a new "walk" property to them.
 	For each animal, the "walk" property should be a function that prints out a string that
