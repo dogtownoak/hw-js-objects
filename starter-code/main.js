@@ -51,6 +51,10 @@
 				console.log(animals[i].makeNoise());
 		}
 		}
+	// below is an alternate way
+	animals.forEach(i => {
+		animals[i].makeNoise();
+	});
 /*
 	Part 3: Let's see how hungry these animals get by adding a "hunger" property to them.
 	Use a for-loop to iterate through the array of animals and add a "hunger" property with
@@ -93,7 +97,7 @@ var walkers = function(){
 }
 }
 }
-
+// use -- instead of line 95
 /*
 	Part 5: Now these animals can walk and talk by themselves, but they're quite lonely.
 	Let's add a "makeFriend" property to each animal. The "makeFriend" property will be a
@@ -123,7 +127,14 @@ var friends = function(){
 }
 }
 }
+// alternate way
 
+animals.forEach(i => {
+	animals[i].makeFriend = animal => {
+		this.friend = animal;
+		console.log(`${this.name} made a friend!`)
+	};
+});
 /* BONUS
 This bonus will be a challenge! To complete this step, you'll need to do some Googling to look up things that have not yet been covered.
 
